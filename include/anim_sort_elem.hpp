@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-class SortingSystem;
+class SortSystem;
 
 class AnimSortElem {
  public:
@@ -24,12 +24,12 @@ class AnimSortElem {
 
   bool operator>=(const AnimSortElem& right) const;
 
-  void SetSortingSystem(SortingSystem* sorting_system);
+  void SetSortingSystem(SortSystem* sorting_system);
 
   operator int() const;
 
  protected:
-  static SortingSystem* sorting_system_;
+  static SortSystem* sorting_system_;
 };
 
 std::ostream& operator<<(std::ostream& os, const AnimSortElem& elem);

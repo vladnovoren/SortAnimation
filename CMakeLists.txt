@@ -24,8 +24,9 @@ set(APP_SOURCE src/app.cpp
 
                src/sort_animator.cpp
                src/anim_sort_elem.cpp
-               src/sorting_system.cpp
-               src/render_anim_sort_functor.cpp)
+               src/sort_system.cpp
+               src/render_anim_sort_functor.cpp
+               src/last_sort_op_controller.cpp)
 
 add_executable(SortAnimation ${APP_SOURCE})
 

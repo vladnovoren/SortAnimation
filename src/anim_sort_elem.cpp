@@ -1,5 +1,5 @@
 #include "anim_sort_elem.hpp"
-#include "sorting_system.hpp"
+#include "sort_system.hpp"
 
 AnimSortElem::AnimSortElem(const int& value): value_(value) {}
 
@@ -52,7 +52,7 @@ std::istream& operator>>(std::istream& is, AnimSortElem& elem) {
   return is;
 }
 
-void AnimSortElem::SetSortingSystem(SortingSystem* sorting_system) {
+void AnimSortElem::SetSortingSystem(SortSystem* sorting_system) {
   assert(sorting_system != nullptr);
 
   sorting_system_ = sorting_system;
@@ -62,4 +62,4 @@ AnimSortElem::operator int() const {
   return value_;
 }
 
-SortingSystem* AnimSortElem::sorting_system_ = nullptr;
+SortSystem* AnimSortElem::sorting_system_ = nullptr;

@@ -2,7 +2,7 @@
 #define ANIMATION_HPP
 
 #include "gui.hpp"
-#include "sorting_system.hpp"
+#include "sort_system.hpp"
 
 static const int BOUNDING_THICKNESS = 2;
 
@@ -21,7 +21,6 @@ class SortAnimator: gui::DummyContainerWidget {
   void Clear();
 
   glib::RenderTexture* render_texture_ = nullptr;
-  SortingSystem* sorting_system_ = nullptr;
 };
 
 #endif /* animation.hpp */

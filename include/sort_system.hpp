@@ -1,5 +1,5 @@
-#ifndef SORTING_SYSTEM_HPP
-#define SORTING_SYSTEM_HPP
+#ifndef SORT_SYSTEM_HPP
+#define SORT_SYSTEM_HPP
 
 #include "sorts.hpp"
 #include "anim_sort_elem.hpp"
@@ -17,10 +17,10 @@ enum class SortType {
 
 static const size_t DEFAULT_ARRAY_SIZE = 100;
 
-class SortingSystem {
+class SortSystem {
  public:
-  SortingSystem();
-  ~SortingSystem() = default;
+  SortSystem();
+  ~SortSystem() = default;
 
   void Resize(const size_t new_size);
   void SetComparing(const AnimSortElem* first, const AnimSortElem* second);
@@ -32,7 +32,6 @@ class SortingSystem {
   bool sorted_ = false;
 
   std::vector<AnimSortElem> array_;
-  std::queue<size_t> active_elems_ids_;
 
   void AddActiveElem(const AnimSortElem* active_elem);
 
@@ -42,4 +41,4 @@ class SortingSystem {
   void Sort(const SortType sort_type, const size_t left, const size_t right);
 };
 
-#endif /* sorting_system.hpp */
+#endif /* sort_system.hpp */

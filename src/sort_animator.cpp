@@ -7,15 +7,15 @@ SortAnimator::SortAnimator(const glib::IntRect& location, const size_t array_siz
 }
 
 void SortAnimator::InitSoringSystem(const size_t array_size) {
-  sorting_system_ = new SortingSystem;
+  sorting_system_ = new SortSystem;
   sorting_system_->Resize(array_size);
 }
 
 void SortAnimator::RenderColumn(const size_t pos, const size_t value, bool highlighted) {
   const std::vector<AnimSortElem>& array = sorting_system_->GetArray();
 
-  double pp_column_x = static_cast<double>(m_location.m_size.x / array.size());
-  double pp_column_y = static_cast<double>(m_location.m_size.y / *std::max_element(array.begin(), array.end()));
+  double pp_column_x   = static_cast<double>(m_location.m_size.x / array.size());
+  double pp_column_y   = static_cast<double>(m_location.m_size.y / *std::max_element(array.begin(), array.end()));
   double column_height = static_cast<double>(pp_column_y * value);
 
   glib::IntRect column_rect(glib::Vector2i(pp_column_x * pos, m_location.m_size.y - column_height),

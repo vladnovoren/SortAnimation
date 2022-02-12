@@ -1,24 +1,24 @@
-#include "sorting_system.hpp"
+#include "sort_system.hpp"
 
-SortingSystem::SortingSystem() {
+SortSystem::SortSystem() {
   Resize(DEFAULT_ARRAY_SIZE);
 }
 
-void SortingSystem::Resize(const size_t new_size) {
+void SortSystem::Resize(const size_t new_size) {
   array_.resize(new_size);
 }
 
-void SortingSystem::SetDefaultValues(const size_t left, const size_t right) {
+void SortSystem::SetDefaultValues(const size_t left, const size_t right) {
   for (size_t i = left; i <= right; ++i) {
     array_[i].value_ = i;
   }
 }
 
-void SortingSystem::ShuffleArray(const size_t left, const size_t right) {
+void SortSystem::ShuffleArray(const size_t left, const size_t right) {
   std::shuffle(array_.begin() + left, array_.begin() + right + 1, std::default_random_engine());
 }
 
-void SortingSystem::Sort(const SortType sort_type, const size_t left, const size_t right) {
+void SortSystem::Sort(const SortType sort_type, const size_t left, const size_t right) {
   switch (sort_type) {
     case SortType::BUBBLE:
       BubbleSort(array_.data(), left, right);
@@ -44,7 +44,7 @@ void SortingSystem::Sort(const SortType sort_type, const size_t left, const size
   }
 }
 
-void SortingSystem::SetComparing(const AnimSortElem* first, const AnimSortElem* second) {
+void SortSystem::SetComparing(const AnimSortElem* first, const AnimSortElem* second) {
   assert(first  != nullptr);
   assert(second != nullptr);
 
@@ -52,7 +52,7 @@ void SortingSystem::SetComparing(const AnimSortElem* first, const AnimSortElem* 
   AddActiveElem(second);
 }
 
-void SortingSystem::SetAssign(const AnimSortElem* dst, const AnimSortElem* src) {
+void SortSystem::SetAssign(const AnimSortElem* dst, const AnimSortElem* src) {
   assert(dst != nullptr);
   assert(src != nullptr);
 
@@ -60,11 +60,11 @@ void SortingSystem::SetAssign(const AnimSortElem* dst, const AnimSortElem* src) 
   AddActiveElem(dst);
 }
 
-const std::vector<AnimSortElem>& SortingSystem::GetArray() const {
+const std::vector<AnimSortElem>& SortSystem::GetArray() const {
   return array_;
 }
 
-void SortingSystem::AddActiveElem(const AnimSortElem* active_elem) {
+void SortSystem::AddActiveElem(const AnimSortElem* active_elem) {
   assert(active_elem != nullptr);
 
 
