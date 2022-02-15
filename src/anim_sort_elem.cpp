@@ -56,6 +56,7 @@ void AnimSortElem::SetSortingSystem(SortSystem* sorting_system) {
   assert(sorting_system != nullptr);
 
   sorting_system_ = sorting_system;
+
 }
 
 AnimSortElem::operator int() const {

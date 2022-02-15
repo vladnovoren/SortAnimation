@@ -33,8 +33,6 @@ class SortSystem {
 
   std::vector<AnimSortElem> array_;
 
-  void AddActiveElem(const AnimSortElem* active_elem);
-
   void SetDefaultValues(const size_t left, const size_t right);
   void ShuffleArray(const size_t left, const size_t right);
 

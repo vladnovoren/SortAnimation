@@ -3,12 +3,12 @@
 SortAnimator::SortAnimator(const glib::IntRect& location, const size_t array_size):
               gui::DummyContainerWidget(location) {
   render_texture_->Resize(location.m_size);
-  InitSoringSystem(array_size);
 }
 
-void SortAnimator::InitSoringSystem(const size_t array_size) {
-  sorting_system_ = new SortSystem;
-  sorting_system_->Resize(array_size);
+void SortAnimator::SetSortSystem(SortSystem* sort_system) {
+  assert(sort_system != nullptr);
+
+  sort_system_ = sort_system;
 }
 
 void SortAnimator::RenderColumn(const size_t pos, const size_t value, bool highlighted) {
@@ -37,4 +37,10 @@ void SortAnimator::RenderBoundingBox() {
   render_texture_->RenderLine(left_line, black);
 
   render_texture_->Display();
+}
+
+void SortAnimator::Recieve(AnimSortElem* oprnd) {
+  assert(oprnd != nullptr);
+
+  
 }
